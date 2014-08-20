@@ -95,6 +95,4 @@
 
 			<div id="main" role="main">
 			 	<div id="main-inner">	
-
-				 	<?php include('inc/modal-page.php'); ?>
 				 			

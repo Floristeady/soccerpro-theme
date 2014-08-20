@@ -407,14 +407,14 @@ h1, h2, h3, h4 {
 
 h1 {
 	color: #313131;
-	font-size: 2.2em;
+	font-size: 2.3em;
 	line-height: 120%;
 	margin: 14px 0px 12px;
 }
 
 h2 {
 	color: #434343;
-	font-size: 1.4em;
+	font-size: 2.3em;
 	margin: 5px 0px;
 	line-height: 120%;
 	font-weight: normal;
@@ -471,17 +471,19 @@ a:hover {}
 a:focus { outline: 0; }
 a:hover, a:active { outline: 0; }
 
-a.simple-button {
+a.my-buttom {
+	border-radius: 6px;
 	color: #fff;
 	text-transform: uppercase;
-	padding-right: 2em;
-	font-weight: 300;
+	font-size: 1em;
+	padding: .8em 1.6em .7em;
+	font-weight: 100;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
-a.simple-button:hover {
-	opacity: .8;
+.button {
+	font-family: 'Merriweather Sans', sans-serif;
 }
-
 
 /* 4. Header
   ========================================================================== */
@@ -639,6 +641,10 @@ nav#access ul.sub-menu li a:hover {
 	margin: 0.4em 0;
 }
 
+#nav-2 ul.menu {
+	margin: 0;
+}
+
 #nav-2 li {
 	display: inline;
 	margin: 0 1em 0 0;
@@ -676,6 +682,38 @@ nav#access ul.sub-menu li a:hover {
 
 #breadcrumbs a:hover {
 	text-decoration: underline;
+}
+
+/*
+ * Submenu-products
+ */
+
+#submenu-products {
+	text-align: center;
+	border-top: 1px solid #e3e3e3;
+}
+
+#submenu-products ul {
+	list-style: none;
+	padding: 1.2em 0;
+}
+
+#submenu-products ul li {
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 0em .2em;
+}
+
+#submenu-products ul li a {
+	color:#818181;
+	font-weight: bold;
+	padding: .3em .5em;
+	border: 1px transparent solid;
+}
+
+#submenu-products ul li a:hover, #submenu-products ul li.current a {
+	color: #e5964a;
+	border: 1px #e5964a solid;
 }
 
 /*
@@ -860,6 +898,56 @@ nav#access ul.sub-menu li a:hover {
 	left: 0;
 }
 
+/*
+ * products
+ */
+ 
+.content-list #top-page h1 {
+	text-align: center;
+	color: #818181;
+	text-transform: uppercase;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-weight: 600;
+}
+
+.content-inner ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.content-list h2 {
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+#products-items li {
+	background: rgba(255, 255, 255, .4);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+	padding: 2.5em 0 0;
+	display: block;
+}
+
+#products-items li:nth-child(2n+2) {
+	background: transparent;
+	box-shadow: inherit;
+}
+
+#products-items li h2 {
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+}
+
+#products-items li .img {
+	margin: 0 0 1em;
+}
+
+#products-items li:nth-child(2n+2) .img {
+	float: left;
+}
+
+#products-items li:nth-child(2n+2) .text {
+	float: right;
+}
 
 /*
  * page
@@ -941,6 +1029,12 @@ nav#access ul.sub-menu li a:hover {
 	padding: 2em 2%;
 }
 
+.archive.tax-categorias #primary,
+.single-soccerproducts #primary {
+	background: transparent;
+	padding: 1em 0 1em;
+}
+
 .blog article, .category article,
 .autor article, .tag article, .archive article {
 	margin-right: 5%;
@@ -975,6 +1069,9 @@ nav#access ul.sub-menu li a:hover {
 	position: relative;
 }
 
+.entry-content.no-post p {
+	text-align: center;
+}
  
 h1.entry-title {
 	font-weight: 300;
@@ -1563,7 +1660,7 @@ a.post-thumbnail:hover img {
 #footer {
 	width:100%;
 	float: left;
-	margin-top: -90px;
+	/*margin-top: -90px;*/
 	background-color: #131313;
 	height: 90px;
 	bottom: 0px;

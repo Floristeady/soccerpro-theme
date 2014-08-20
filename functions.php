@@ -47,8 +47,8 @@ function soccerpro_setup() {
 	
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 657, 312, true );
-	add_image_size( 'featured-page', 215, 180, true );
+	set_post_thumbnail_size( 657, 400, true );
+	add_image_size( 'featured-product', 588, 278, true );
 
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'soccerpro', TEMPLATEPATH . '/languages' );
@@ -190,7 +190,11 @@ add_filter( 'excerpt_more', 'soccerpro_auto_excerpt_more' );
  * @return string "Continue Reading" link
  */
 function soccerpro_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'soccerpro' ) . '</a>';
+    if ( is_post_type_archive('soccerproducts') ) :
+    	return '';
+    else :
+		return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'soccerpro' ) . '</a>';
+	endif;
 }
 
 /**
@@ -594,5 +598,104 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 	$existing_mimes['svg'] = 'mime/type';
 	return $existing_mimes;
 }
+
+
+/**
+********************* Post Custom Products*****************
+*/
+
+add_action('init', 'product_register');
+ 
+function product_register () {
+ 
+$labels = array(
+'name' => _x('Productos', 'post type general name'),
+'singular_name' => _x('Producto', 'post type singular name'),
+'add_new' => _x('Añadir nuevo producto', 'proyecto item'),
+'add_new_item' => __('Añadir nuevo producto'),
+'edit_item' => __('Editar producto'),
+'new_item' => __('Nueva producto'),
+'view_item' => __('Ver producto'),
+'search_items' => __('Buscar producto'),
+'not_found' => __('No se ha encontrado nada'),
+'not_found_in_trash' => __('No se ha encontrado nada en la papelera'),
+'parent_item_colon' => ''
+);
+ 
+$args = array(
+'labels' => $labels,
+'public' => true,
+'has_archive' => true,
+'publicly_queryable' => true,
+'show_ui' => true,
+'query_var' => true,
+'rewrite' => array('slug' => 'productos'),
+'capability_type' => 'page',
+'hierarchical' => false,
+'menu_position' => null,
+'supports' => array('title','editor','thumbnail','excerpt', 'page-attributes')
+//'menu_icon'            => get_template_directory_uri() . '/images/elements/house.png'
+);
+ 
+     register_post_type( 'soccerproducts', $args );
+     flush_rewrite_rules();
+}
+
+/**
+********************* Custom Taxonomy Products*****************
+*/
+
+add_action( 'init', 'create_cat_product', 0 );
+
+function create_cat_product() {
+
+	$labels = array(
+		'name'                       => _x( 'Categorías Productos', 'Taxonomy General Name', 'soccerpro' ),
+		'singular_name'              => _x( 'Categoría', 'Taxonomy Singular Name', 'soccerpro' ),
+		'menu_name'                  => __( 'Categorías Productos', 'soccerpro' ),
+		'all_items'                  => __( 'Todas las categorias', 'soccerpro' ),
+	);
+
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+
+	register_taxonomy( 'categorias', 'soccerproducts', $args );
+
+}
+
+add_action( 'init', 'create_line_product', 0 );
+
+function create_line_product() {
+
+	$labels = array(
+		'name'                       => _x( 'Líneas de Productos', 'Taxonomy General Name', 'soccerpro' ),
+		'singular_name'              => _x( 'Línea', 'Taxonomy Singular Name', 'soccerpro' ),
+		'menu_name'                  => __( 'Líneas de Productos', 'soccerpro' ),
+		'all_items'                  => __( 'Todos las líneas', 'soccerpro' ),
+	);
+
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+
+	register_taxonomy( 'lineas', 'soccerproducts', $args );
+
+}
+
+
+
 
 ?>

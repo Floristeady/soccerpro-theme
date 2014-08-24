@@ -9,37 +9,110 @@
 
 get_header(); ?>
 
-	<?php include('inc/breadcrumbs.php'); ?>
+<?php include('inc/breadcrumbs.php'); ?>
 	
-	<div id="primary" class="content-area row">
-	
-		<div id="content" class="site-content" role="main">
+<div id="primary" class="content-area">
 
+	<?php
+	while ( have_posts() ) : the_post(); ?>
+
+	<div id="top-page">
+
+		<h1 class="product-title"><?php the_title() ?></h1>
+
+	</div>
+	
+	<div id="center-product">
+	
+		<div class="site-content row" role="main">
+
+			<div class="columns medium-4 right">
+				
+					<div class="entry-content">
+					<?php the_content(); ?>
+					</div>
+			</div>
+				
+			<?php  $rows = get_field('galeria_producto');  ?>
+			
+			<?php if($rows) { ?>
+			
+			<div id="product-gallery" class="flexslider">
+					<?php echo '<ul class="slides">';
+					foreach($rows as $row) { ?>
+						<li>
+						
+						<?php 
+							$url = $row['imagen_galeria_producto']; $width = 1000; $height = 572;
+							$crop = true; $retina = true; // Optional. Defaults to 'false'
+							$image = matthewruddy_image_resize( $url, $width, $height, $crop, $retina );
+							if ( !is_wp_error( $image ) ) { 
+							echo '<img alt="" src="'. $image['url'] .'"/>';
+							}
+		 				?>
+		 				
+		 				</li>
+					<?php } echo '</ul>'; ?>
+					
+		    </div>
+			
+			<?php } ?>
+			
+		</div>
+			
+		<?php if( get_field('beneficios_producto') ): ?>
+		<div id="product-benefits">
+			
+			<div class="row">
+				
+				<div class="medium-4 columns">
+					<h2><?php _e('Beneficios','soccepro'); ?></h2>
+				</div>
+				
+				<div class="columns medium-7 text">
+				<?php the_field('beneficios_producto'); ?>
+				</div>
+			</div>
+			
+		</div>
+		<?php endif;?>
+			
+
+			<?php // Previous/next post navigation.
+			//soccerpro_post_nav(); ?>
+
+		<?php endwhile; ?>
+	
+	</div><!--center-->
+	
+	<div id="bottom-product">
+		<div class="row">
+		<?php if( get_field('texto_secundario') ): ?>
+			<div class="columns medium-4 text">
+				<p><?php the_field('texto_secundario'); ?></p>
+			</div>
+		<?php endif;?>
 		
-
-			<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
-
-					/*
-					 * Include the post format-specific template for the content. If you want to
-					 * use this in a child theme, then include a file called called content-___.php
-					 * (where ___ is the post format) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-
-					// Previous/next post navigation.
-					soccerpro_post_nav();
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
+			<div class="columns medium-8 extras">
+				<div class="btn">
+				<a class="open">+</a>
+				<span class="more"><?php _e('Descripción <br>Técnica','soccerpro');?></span>
+				</div>
+			    <?php if( get_field('imagen_secundaria') ): ?>
+				<?php 
+					$url = get_field('imagen_secundaria') ; $width = 720; $height = 470;
+					$crop = true; $retina = true; // Optional. Defaults to 'false'
+					$image = matthewruddy_image_resize( $url, $width, $height, $crop, $retina );
+					if ( !is_wp_error( $image ) ) { 
+					echo '<img alt="" src="'. $image['url'] .'"/>';
 					}
-				endwhile;
-			?>
+ 				?>
+ 				<?php endif;?>
+			</div>
 
 		</div>
-		
 	</div>
+		
+</div>
 
 <?php get_footer(); ?>

@@ -17,9 +17,9 @@
 	</div><!-- #page -->
 		
 	<footer id="footer" class="site-footer" role="contentinfo">
-		<div id="footer-content" class="row">	
+		<ul id="footer-content" class="row">	
 		<?php get_sidebar( 'footer' ); ?>
-		</div>
+		</ul>
 	</footer> 
 
 	<?php wp_footer(); ?>

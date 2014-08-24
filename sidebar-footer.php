@@ -16,20 +16,27 @@
 	 */
 	if (   ! is_active_sidebar( 'first-footer-widget-area'  )
 		&& ! is_active_sidebar( 'second-footer-widget-area' )
+		&& ! is_active_sidebar( 'third-footer-widget-area' )
 	)
 		return;
 	// If we get this far, we have widgets. Let's do this.
 ?>
 
 <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-					<div class="widget-list widget-footer columns medium-6">
+					<li class="widget-list widget-footer columns medium-4">
 						<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-					</div>
+					</li>
 <?php endif; ?>
 
 <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?>
-					<div class="widget-list widget-footer widget-last columns medium-4">
+					<li class="widget-list widget-footer columns medium-4">
 						<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
-					</div>
+					</li>
+<?php endif; ?>
+
+<?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
+					<li class="widget-list widget-footer widget-last columns medium-4">
+						<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
+					</li>
 <?php endif; ?>
 

@@ -3,7 +3,7 @@
 */
 
 jQuery(window).load(function() {
-	  jQuery('#home-slider').flexslider({
+	  /*jQuery('#home-slider').flexslider({
 	    animation: "fade",
 	    animationLoop: true,
 	    controlNav: true,
@@ -31,6 +31,15 @@ jQuery(window).load(function() {
 			   opacity: 1 
 		    }, 400);
 	    }
+	  });*/
+	  
+	  jQuery('#product-gallery').flexslider({
+		     animation: "fade",
+		     slideshow: false,
+		     directionNav: false,
+		     start: function(slider){
+		       $('#product-gallery div').removeClass('loading');
+		     }
 	  });
 	  
 });

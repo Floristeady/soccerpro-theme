@@ -251,8 +251,8 @@ function soccerpro_widgets_init() {
 		'name' => __( 'Footer Widget Area', 'soccerpro' ),
 		'id' => 'first-footer-widget-area',
 		'description' => __( 'An optional widget area for your site footer', 'soccerpro' ),
-		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
@@ -262,11 +262,22 @@ function soccerpro_widgets_init() {
 		'name' => __( 'Second Footer Widget Area', 'soccerpro' ),
 		'id' => 'second-footer-widget-area',
 		'description' => __( 'An optional widget area for your site footer', 'soccerpro' ),
-		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );	
+	
+	// Area 4, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Third Footer Widget Area', 'simplesteady' ),
+		'id' => 'third-footer-widget-area',
+		'description' => __( 'An optional widget area for your site footer', 'simplesteady' ),
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
 	
 }
 /** Register sidebars by running soccerpro_widgets_init() on the widgets_init hook. */
@@ -286,7 +297,7 @@ function soccerpro_font_url() {
 	 * by the Font, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Font font: on or off', 'soccerpro' ) ) {
-		$font_url = add_query_arg( 'family', 'Roboto+Condensed:400,700|Merriweather+Sans:400,300,700,400italic', "//fonts.googleapis.com/css" );
+		$font_url = add_query_arg( 'family', 'Roboto+Condensed:300,400,700|Merriweather+Sans:400,300,700,300italic,400italic', "//fonts.googleapis.com/css" );
 	}
 	//Lato:300,400,700,300italic,400italic,700italic
 

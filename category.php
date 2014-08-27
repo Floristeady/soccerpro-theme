@@ -9,6 +9,17 @@
 
 get_header(); ?>
 
+<div id="top-page">
+
+	<?php include('inc/breadcrumbs.php'); ?>
+
+	<?php
+		foreach((get_the_category()) as $category) {
+		    echo '<h1 class="entry-title">' .$category->cat_name . '</h1> ';
+		} ?>
+	
+</div>
+
 <section id="primary" class="content-area row">
 		<div id="content" class="site-content columns medium-8" role="main">
 

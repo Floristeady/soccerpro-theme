@@ -68,9 +68,9 @@
 						<div class="right">
 							
 							
-							<?php if ( is_active_sidebar( 'extra-widget-area' ) ) : ?>
+							<?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 							<div class="widget-header">
-								<?php dynamic_sidebar( 'extra-widget-area' ); ?>
+								<?php dynamic_sidebar( 'header-widget-area' ); ?>
 							</div>
 							<?php endif; ?>
 							

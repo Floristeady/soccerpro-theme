@@ -9,7 +9,10 @@
 
 get_header(); ?>
 
+	<div id="top-page">
 	<?php include('inc/breadcrumbs.php'); ?>
+	
+	</div>
 	
 	<div id="primary" class="content-area row">
 	

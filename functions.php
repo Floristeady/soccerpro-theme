@@ -240,8 +240,19 @@ function soccerpro_widgets_init() {
 		'name' => __( 'Extra Widget', 'soccerpro' ),
 		'id' => 'extra-widget-area',
 		'description' => __( 'Extra Widget', 'steelpro' ),
-		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+	
+	// Area 1, located at the top of the sidebar.
+	register_sidebar( array(
+		'name' => __( 'Header Widget', 'soccerpro' ),
+		'id' => 'header-widget-area',
+		'description' => __( 'Header Widget', 'steelpro' ),
+		'before_widget' => '<div id="%1$s" class="widget-header %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );

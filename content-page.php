@@ -48,7 +48,7 @@
 					'link_after'  => '</span>',
 				) );
 	
-				edit_post_link( __( 'Edit', 'soccerpro' ), '<span class="edit-link">', '</span>' );
+				//edit_post_link( __( 'Edit', 'soccerpro' ), '<span class="edit-link">', '</span>' );
 			?>
 			</div>
 			

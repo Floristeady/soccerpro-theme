@@ -10,6 +10,13 @@
 get_header(); ?>
 
 <div id="main-content" class="main-content">
+	
+	<div id="top-page">
+	
+		<?php include('inc/breadcrumbs.php'); ?>
+		<h1 class="entry-title">Novedades</h1>
+	
+	</div>
 
 	<div id="primary" class="content-area row">
 	
@@ -35,7 +42,7 @@ get_header(); ?>
 				// If no content, include the "No posts found" template.
 				get_template_part( 'content', 'none' );
 
-			endif; ?>
+			endif;  ?>
 
 		</div>
 	

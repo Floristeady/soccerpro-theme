@@ -15,8 +15,14 @@
 		</div><!-- #main -->
 	
 	</div><!-- #page -->
-		
+	
+	
 	<footer id="footer" class="site-footer" role="contentinfo">
+		<?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
+		<div class="widget-social">
+			<?php dynamic_sidebar( 'extra-widget-area' ); ?>
+		</div>
+		<?php endif; ?>
 		<ul id="footer-content" class="row">	
 		<?php get_sidebar( 'footer' ); ?>
 		</ul>

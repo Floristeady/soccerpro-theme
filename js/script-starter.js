@@ -46,18 +46,25 @@ jQuery(window).load(function() {
 
 /* Iniciando Superfish para menu desplegable */
 jQuery(document).ready(function(){ 
-    /*jQuery("ul#menu-menu-principal").superfish({
+
+	jQuery('#bottom-product a.open').click(function(e) {
+		jQuery('.technical').slideDown().css('opacity','1');
+	});
+	
+	jQuery('#bottom-product a.this_close').click(function(e) {
+		jQuery('.technical').slideUp().css('opacity','0');
+	});
+
+     /* jQuery("ul#menu-menu-principal").superfish({
         delay:       100,                            // one second delay on mouseout 
         animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 
         speed:       'fast',                          // faster animation speed 
         autoArrows:  false,                           // disable generation of arrow mark-up 
         dropShadows: true                            // disable drop shadows 
         
-    });*/ 
+    });
     
-    jQuery('.page-list-grey').parents('#main-inner').css( "background-color", "#414042" );
-    
-          
+       
 	jQuery('.open-modal a').click(function(e) {
 		jQuery('#box-contact').foundation('reveal', 'open');
 	});
@@ -68,7 +75,7 @@ jQuery(document).ready(function(){
 	} else if ( $findError.hasClass('wpcf7-mail-sent-ok')) {
 		$('#box-contact').foundation('reveal', 'open');
 		$('#box-contact').find('.entry-content .row').hide();
-	}
+	}*/
 	   
 });
 

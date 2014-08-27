@@ -30,6 +30,8 @@ get_header(); ?>
 				
 					<div class="entry-content">
 					<?php the_content(); ?>
+					
+					<?php include('inc/share-social.php'); ?>
 					</div>
 			</div>
 				
@@ -50,7 +52,7 @@ get_header(); ?>
 							echo '<img alt="" src="'. $image['url'] .'"/>';
 							}
 		 				?>
-		 				
+
 		 				</li>
 					<?php } echo '</ul>'; ?>
 					
@@ -94,10 +96,23 @@ get_header(); ?>
 		<?php endif;?>
 		
 			<div class="columns medium-8 extras">
+			    <?php if( get_field('descripcion_tecnica') ): ?>
 				<div class="btn">
 				<a class="open">+</a>
 				<span class="more"><?php _e('Descripción <br>Técnica','soccerpro');?></span>
 				</div>
+				<?php endif;?>
+				
+				
+				<?php if( get_field('descripcion_tecnica') ): ?>
+				<div class="technical">
+				    <a class="this_close">-</a>
+					<h4><?php _e('Descripción Técnica','soccerpro');?></h4>
+					<?php the_field('descripcion_tecnica'); ?>
+					
+				</div>
+				<?php endif;?>
+
 			    <?php if( get_field('imagen_secundaria') ): ?>
 				<?php 
 					$url = get_field('imagen_secundaria') ; $width = 720; $height = 470;

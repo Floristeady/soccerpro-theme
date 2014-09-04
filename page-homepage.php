@@ -12,9 +12,11 @@ get_header(); ?>
 	<div id="content" class="site-content" role="main">
 
 		<div id="home-slider" class="flexslider">
-	
+			<ul class="slides">
+				<?php include('inc/home01.php') ?>
+			</ul>
 		</div>
-		
+	
 		<?php  $rows = get_field('destacados_inicio');  ?>
 		<?php if($rows) { ?>
 		<div id="featured-products">
@@ -22,7 +24,7 @@ get_header(); ?>
 					foreach($rows as $row) { ?>
 						<li class="<?php echo $row['opcion_fondo']; ?>">
 						   <div class="over">
-							<div class="row">
+							<div class="row inner">
 									<div class="img medium-7 columns">
 									   										
 										<?php if($row['imagen_destacado']) { ?>
@@ -43,15 +45,15 @@ get_header(); ?>
 										<p><?php echo $row['texto_descriptivo_destacado']?></p>
 										<?php } ?>
 										 <?php if($row['link_contenido']) {?>
-										<a href="<?php echo $row['link_contenido']?>" class="my-buttom button">Saber más</a>
+										<a href="<?php echo $row['link_contenido']?>" class="my-button  button">Saber más</a>
 										<?php } ?>
 									</div>
 									
 								</div>
 							</div>
-							<div class="back" style="background-color:<?php echo $row['color_fondo_destacado'] ?>;">
+							<div class="back op<?php echo $row['selecionar_imagen_completa']; ?>" style="background-color:<?php echo $row['color_fondo_destacado'] ?>;">
 							        <?php if($row['imagen_fondo_destacado']) {?>
-									<img alt="<?php echo $row['texto_descriptivo_destacado']?>" src="<?php echo $row['imagen_fondo_destacado']?>"/>
+									<img alt="fondo" src="<?php echo $row['imagen_fondo_destacado']?>"/>
 									<?php } ?>
 							</div>
 							
@@ -77,7 +79,7 @@ get_header(); ?>
 					<?php } ?>
 					
 					<?php if( get_field('info_link') ){ ?>
-					<a title="" href="<?php the_field('info_link'); ?>" class="button my-buttom">Leer más</a>	  				 <?php } ?>
+					<a title="" href="<?php the_field('info_link'); ?>" class="button my-button ">Leer más</a>	  				 <?php } ?>
 					
 				</div>
 			</div>
@@ -102,7 +104,7 @@ get_header(); ?>
 							<?php } ?>
 							
 							<?php if($row['link_secundario']) {?>
-							 <a href="<?php echo $row['link_secundario']?>" class="my-buttom button"><?php echo $row['texto_boton_secundario']?></a>
+							 <a href="<?php echo $row['link_secundario']?>" class="my-button  button"><?php echo $row['texto_boton_secundario']?></a>
 							<?php } ?>
 						</div>
 					</div>

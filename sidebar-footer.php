@@ -35,7 +35,7 @@
 <?php endif; ?>
 
 <?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
-					<li class="widget-list widget-footer widget-last columns medium-4">
+					<li class="widget-list widget-footer widget-last columns medium-4 show-for-medium-up">
 						<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
 					</li>
 <?php endif; ?>

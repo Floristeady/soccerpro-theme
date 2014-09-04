@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<?php include('inc/breadcrumbs.php'); ?>
+<?php include('inc/breadcrumbs-products.php'); ?>
 	
 <div id="primary" class="content-area">
 
@@ -39,9 +39,16 @@ get_header(); ?>
 			
 			<?php if($rows) { ?>
 			
-			<div id="product-gallery" class="flexslider">
-					<?php echo '<ul class="slides">';
-					foreach($rows as $row) { ?>
+			<div id="product-gallery" class="flexslider loading">
+					<?php echo '<ul class="slides">';?>
+					
+					<div class="spinner">
+					  <div class="dot1"></div>
+					  <div class="dot2"></div>
+					</div>
+					
+					<?php foreach($rows as $row) { ?>
+					
 						<li>
 						
 						<?php 
@@ -95,25 +102,15 @@ get_header(); ?>
 			</div>
 		<?php endif;?>
 		
-			<div class="columns medium-8 extras">
+			<div class="columns medium-8 extras <?php if(!get_field('imagen_secundaria') ){ echo 'no-img'; } ?>">
 			    <?php if( get_field('descripcion_tecnica') ): ?>
-				<div class="btn">
+				<div class="btn show-for-medium-up">
 				<a class="open">+</a>
 				<span class="more"><?php _e('Descripción <br>Técnica','soccerpro');?></span>
 				</div>
 				<?php endif;?>
 				
-				
-				<?php if( get_field('descripcion_tecnica') ): ?>
-				<div class="technical">
-				    <a class="this_close">-</a>
-					<h4><?php _e('Descripción Técnica','soccerpro');?></h4>
-					<?php the_field('descripcion_tecnica'); ?>
-					
-				</div>
-				<?php endif;?>
-
-			    <?php if( get_field('imagen_secundaria') ): ?>
+				<?php if( get_field('imagen_secundaria') ): ?>
 				<?php 
 					$url = get_field('imagen_secundaria') ; $width = 720; $height = 470;
 					$crop = true; $retina = true; // Optional. Defaults to 'false'
@@ -123,6 +120,18 @@ get_header(); ?>
 					}
  				?>
  				<?php endif;?>
+				
+				
+				<?php if( get_field('descripcion_tecnica') ): ?>
+				<div class="technical">
+				    <a class="this_close show-for-medium-up">-</a>
+					<h4><?php _e('Descripción Técnica','soccerpro');?></h4>
+					<?php the_field('descripcion_tecnica'); ?>
+					
+				</div>
+				<?php endif;?>
+
+			    
 			</div>
 
 		</div>

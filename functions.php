@@ -48,7 +48,7 @@ function soccerpro_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 657, 400, true );
-	add_image_size( 'featured-product', 588, 278, true );
+	add_image_size( 'featured-product', 588, 290, true );
 
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'soccerpro', TEMPLATEPATH . '/languages' );
@@ -191,6 +191,8 @@ add_filter( 'excerpt_more', 'soccerpro_auto_excerpt_more' );
  */
 function soccerpro_continue_reading_link() {
     if ( is_post_type_archive('soccerproducts') ) :
+    	return '';
+   elseif ( is_search() ) :
     	return '';
     else :
 		return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'soccerpro' ) . '</a>';

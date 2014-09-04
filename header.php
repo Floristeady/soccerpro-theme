@@ -16,7 +16,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> ><!--<![endif]-->
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 			
 	    <meta name="description" content="<?php echo '' . get_bloginfo ( 'description' );  ?>">
@@ -65,8 +65,7 @@
 							<h2><?php bloginfo( 'description' ); ?></h2>
 						</div>
 						
-						<div class="right">
-							
+						<div class="right header-right">
 							
 							<?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 							<div class="widget-header">
@@ -75,11 +74,16 @@
 							<?php endif; ?>
 							
 							<div id="search-container" class="search-box-wrapper">
-								<?php get_search_form(); ?>
+								<a class="icon_search" href="#"></a>
+								<div class="search-inner"><?php get_search_form(); ?></div>
 							</div>
 							
+							<a class="open_movil show-for-small-only close" href="javascript:void(0);">☰</a>
+							
 							<nav id="nav-2">
-									<?php  wp_nav_menu( array( 'container_id' => 'menu-secondary', 'theme_location' => 'secondary', 'sort_column' => 'menu_order' ) ); ?>
+								<span class="menu-movil">
+								<?php  wp_nav_menu( array( 'container_id' => 'menu-secondary', 'theme_location' => 'secondary', 'sort_column' => 'menu_order' ) ); ?>
+								</span>
 							</nav>
 						</div>
 						

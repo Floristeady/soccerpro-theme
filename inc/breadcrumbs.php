@@ -36,10 +36,7 @@
 			
 		 } elseif (is_author()) { 
 			echo"<span class='current'>"; printf( __( 'All posts by %s', 'soccerpro' ), get_the_author() );  				echo'</span>';
-			
-		 } elseif (is_search()) { 
-			echo"<span class='current'>"; printf( __( 'Search Results for: %s', 'soccerpro' ), get_search_query() ); echo '</span>';
-			
+		
 		 } else { ?>
 		
 		<?php  } ?>

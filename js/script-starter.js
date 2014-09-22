@@ -1,6 +1,4 @@
 jQuery(function ($) {
-
-
 	/************************* 
 	Variables
 	**************************/
@@ -8,7 +6,11 @@ jQuery(function ($) {
 	var browserwidth;
 	var desktopwidth = 1024; // resolución mínima desktop
 	var mobilewidth = 767; // resolución máxima móviles
-
+	
+	if (!Modernizr.svg) {
+	  $("a.logo img").attr("src", "wp-content/themes/soccerpro-theme/images/elements/logosoccerpro.png");
+	  $('img[src$=".svg"]').hide();
+	}
 
 	/************************* 
 	Functiones
@@ -24,31 +26,44 @@ jQuery(function ($) {
 	function openTechnical() {
 		$('#bottom-product a.open').click(function(e) {
 			$('.technical').slideDown().css('opacity','1');
+			$heightec = $('.technical').outerHeight();
+		
+			$('#bottom-product .extras').css('height',$heightec);
+			//console.log($heightec+26) ;
 		});
 		
 		$('#bottom-product a.this_close').click(function(e) {
 			$('.technical').slideUp().css('opacity','0');
+			$heightec = $('#bottom-product .extras').height();
+			
+			$('#bottom-product .extras').css('height',$heightec);
 		});
 	}
 	
 	function onLoadAndResize(){ 
 		getbrowserwidth();
 		galeriaProducto();
-		openTechnical();
 		showIcons();
 		imgLoadSlider();
 		searchShow();
-		
+		//$(document).foundation();
 		
 		if (browserwidth >= mobilewidth) {
 			menuDesplegable();
+			openTechnical();
 		}
 		
 		if (browserwidth <= mobilewidth) { 
 			bottonmobile();
 			mainMenu();
+			showTechnical();
 		}
 		
+	}
+	
+	function showTechnical() {
+		$('.technical').slideDown().css('opacity','1');
+		$('#bottom-product .extras').css('height','inherit');
 	}
 
 	function galeriaProducto() {
@@ -191,5 +206,3 @@ jQuery(function ($) {
 	});
 
 });
-
-

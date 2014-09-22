@@ -68,6 +68,9 @@ get_header(); ?>
 			<?php } ?>
 			
 		</div>
+		
+		<?php  //Previous/next post navigation.
+			soccerpro_product_nav(); ?>
 			
 		<?php if( get_field('beneficios_producto') ): ?>
 		<div id="product-benefits">
@@ -85,10 +88,6 @@ get_header(); ?>
 			
 		</div>
 		<?php endif;?>
-			
-
-			<?php // Previous/next post navigation.
-			//soccerpro_post_nav(); ?>
 
 		<?php endwhile; ?>
 	

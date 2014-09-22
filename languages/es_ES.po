@@ -1,7 +1,7 @@
 # Translation of Simple Steady in Spanish (Spain)
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-06-26 15:22-0600\n"
+"PO-Revision-Date: 2014-09-18 11:51-0600\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -355,7 +355,7 @@ msgstr "Sidebar secundario para widget"
 msgid "Footer Widget Area"
 msgstr "Primer Área del Footer"
 
-#: functions.php:246 functions.php:260 functions.php:271 functions.php:282
+#: functions.php:266 functions.php:277 functions.php:288
 msgid "An optional widget area for your site footer"
 msgstr "Área para widget en el footer del sitio"
 
@@ -363,13 +363,17 @@ msgstr "Área para widget en el footer del sitio"
 msgid "Second Footer Widget Area"
 msgstr "Segunda Área del Footer"
 
-#: functions.php:269
+#: functions.php:286
 msgid "Third Footer Widget Area"
 msgstr "Tercera Área del Footer"
 
-#: functions.php:280
-msgid "Fourth Footer Widget Area"
-msgstr "Cuarta Área del Footer"
+#: functions.php:253 functions.php:255
+msgid "Header Widget"
+msgstr "Encabezado Widget"
+
+#: functions.php:242 functions.php:244
+msgid "Extra Widget Footer"
+msgstr "Extra Widget para Footer"
 
 #: header.php:87
 msgid "Skip to content"

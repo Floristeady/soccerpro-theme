@@ -239,7 +239,7 @@ function soccerpro_widgets_init() {
 	
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Extra Widget', 'soccerpro' ),
+		'name' => __( 'Extra Widget Footer', 'soccerpro' ),
 		'id' => 'extra-widget-area',
 		'description' => __( 'Extra Widget', 'steelpro' ),
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
@@ -252,7 +252,7 @@ function soccerpro_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Header Widget', 'soccerpro' ),
 		'id' => 'header-widget-area',
-		'description' => __( 'Header Widget', 'steelpro' ),
+		'description' => __( 'Header Widget', 'soccerpro' ),
 		'before_widget' => '<div id="%1$s" class="widget-header %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widget-title">',
@@ -283,7 +283,7 @@ function soccerpro_widgets_init() {
 	
 	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'simplesteady' ),
+		'name' => __( 'Third Footer Widget Area', 'soccerpro' ),
 		'id' => 'third-footer-widget-area',
 		'description' => __( 'An optional widget area for your site footer', 'simplesteady' ),
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
@@ -564,6 +564,52 @@ function soccerpro_post_nav() {
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
+}
+endif;
+
+
+if ( ! function_exists( 'soccerpro_product_nav' ) ) :
+/**
+ * Display navigation to next/previous post when applicable.
+ *
+ * @since soccerpro 1.0
+ *
+ * @return void
+ */
+function soccerpro_product_nav() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	
+	function next_button($format){
+	  $format = str_replace('href=', 'class="next" href=', $format);
+	  return $format;
+	}
+	function prev_button($format){
+	  $format = str_replace('href=', 'class="prev" href=', $format);
+	  return $format;
+	}
+	add_filter('next_post_link', 'next_button');
+	add_filter('previous_post_link', 'prev_button');
+
+	?>
+	<nav class="navigation product-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Product navigation', 'soccerpro' ); ?></h1>
+		<div class="nav-links">
+			<?php
+				previous_post_link( '%link', __( '%title', 'soccerpro' ) );
+				next_post_link( '%link', __( '%title', 'soccerpro' ) );
+			?>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+	
+	
+
 }
 endif;
 

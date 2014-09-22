@@ -1,4 +1,4 @@
-<li class="slider01">
+<li class="slider01" <?php if( get_field('color_fondo_slider') ) { ?>style="background-color:<?php the_field('color_fondo_slider') ?>;"<?php }?>>
 	<div class="text row">
 	
 		<div class="columns medium-9 small-centered">
@@ -17,6 +17,7 @@
 		</div>
 		<?php } ?>
 		
+		<?php if( get_field('codigo_custom_slider') == 'custom' ) { ?>
 		<div class="img large-11 small-centered show-for-medium-up loading">
 			
 			<div class="spinner">
@@ -48,10 +49,24 @@
 			</ul>
 			<img class="balon anima" src="<?php bloginfo('template_url')?>/images/test/balonslider.png" alt="balonslider" width="494" height="445" />
 		</div>
+		<?php } else { ?>
+		   <?php if( get_field('imagen_completa_slider') ) { ?>
+		   	<div class="spinner">
+			  <div class="dot1"></div>
+			  <div class="dot2"></div>
+			</div>
+		   
+			<div class="img-big small-12 small-centered show-for-medium-up loading">
+			 	<img src="<?php the_field('imagen_completa_slider'); ?>" alt="<?php the_field('titulo_slider'); ?>">
+			</div>
+			<?php } ?>
+		<?php } ?>
 		
 	</div>
 	
+	<?php if( get_field('codigo_custom_slider') == 'custom' ) { ?>
 	<div class="back show-for-large-up">
 		<img src="<?php bloginfo('template_url')?>/images/test/balonfondo.png" alt="balonfondo" />
 	</div>
+	<?php } ?>
 </li>

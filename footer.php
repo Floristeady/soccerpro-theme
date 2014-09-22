@@ -9,13 +9,11 @@
  * @subpackage soccerpro
  * @since soccerpro 1.0
  */
-?>			
-				
+?>							
 			</div><!-- #main-inner -->
 		</div><!-- #main -->
 	
 	</div><!-- #page -->
-	
 	
 	<footer id="footer" class="site-footer" role="contentinfo">
 		<?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
@@ -27,10 +25,6 @@
 		<?php get_sidebar( 'footer' ); ?>
 		</ul>
 	</footer> 
-
 	<?php wp_footer(); ?>
-	<script type="text/javascript"> 
-    	//$(document).foundation();
-	</script>
 	</body>
 </html>

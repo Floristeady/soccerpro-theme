@@ -14,7 +14,7 @@
 <!--[if IE 8 ]><html <?php language_attributes(); ?> class="no-js ie ie8"><![endif]-->
 <!--[if IE 9 ]><html <?php language_attributes(); ?> class="no-js ie ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> ><!--<![endif]-->
-	<head>
+<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -66,19 +66,18 @@
 						</div>
 						
 						<div class="right header-right">
-							
-							<?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-							<div class="widget-header">
-								<?php dynamic_sidebar( 'header-widget-area' ); ?>
-							</div>
-							<?php endif; ?>
-							
+
 							<div id="search-container" class="search-box-wrapper">
 								<a class="icon_search" href="#"></a>
 								<div class="search-inner"><?php get_search_form(); ?></div>
 							</div>
-							
+
 							<a class="open_movil show-for-small-only close" href="javascript:void(0);">☰</a>
+							<?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
+							<div class="widget-header show-for-large-up">
+								<?php dynamic_sidebar( 'header-widget-area' ); ?>
+							</div>
+							<?php endif; ?>
 							
 							<nav id="nav-2">
 								<span class="menu-movil">
@@ -98,5 +97,4 @@
 			</header>
 
 			<div id="main" role="main">
-			 	<div id="main-inner">	
-				 			
+			 	<div id="main-inner">		 			

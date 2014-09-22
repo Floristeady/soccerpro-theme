@@ -119,7 +119,7 @@ get_header(); ?>
 		<?php if($rows) { ?>
 		<div id="clients">
 			<div class="row">
-				<h3>Nuestros <span></span> Clientes</h3>
+				<h3><?php _e('¿Sabes quien juega con nuestros balones?', 'soccerpro') ?></h3>
 				
 				<?php echo '<ul class="slides">';
 					foreach($rows as $row) { ?>

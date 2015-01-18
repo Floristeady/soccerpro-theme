@@ -1,7 +1,7 @@
 <li class="slider01" <?php if( get_field('color_fondo_slider') ) { ?>style="background-color:<?php the_field('color_fondo_slider') ?>;"<?php }?>>
 	<div class="text row">
 	
-		<div class="columns medium-9 small-centered">
+		<div class="columns medium-10 small-centered">
 		    <?php if( get_field('titulo_slider') ) { ?>
 			<h1><?php the_field('titulo_slider'); ?></h1>
 			<?php } ?>

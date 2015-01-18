@@ -1828,7 +1828,7 @@ a.facebook-link {
   background-position: center left;
 }
 
-a.twitter-link {
+.twitter-link {
   background-position: -40px center;
 }
 
@@ -2511,6 +2511,7 @@ a.post-thumbnail:hover img {
 	text-align: center;
 }
 
+
 /*
 	social footer
 */
@@ -2952,13 +2953,17 @@ a.post-thumbnail:hover img {
 	color: #bcbcbc;
 }
 
+.widget_newsletterwidget form p {
+	margin: 0;
+}
 
 .newsletter input[type="text"], .newsletter input[type="email"] {
 	background: rgba(255, 255, 255, .2);
 	border: none;
 	font-size: .8em;
-	padding: .3rem .8rem;
+	padding: .4rem .4rem;
 	margin-bottom: .3rem;
+	min-width: 200px;
 	color: #eaeaea;
 }
 
@@ -3070,7 +3075,7 @@ div.wpcf7-mail-sent-ok {
 ========================================================================== */
 
 @media only screen and (max-width: 60em) { 
-	#featured-products li .img img {width: 100%;}
+	#featured-products li .img img {width: 100%;max-width: 100%;}
 	#featured-products li:first-child .img {height: inherit;}
 	#featured-products h2 {font-size: 2em;}
 	.widget-footer .textwidget br {float: left; clear: inherit; display: none;}
@@ -3088,6 +3093,8 @@ div.wpcf7-mail-sent-ok {
 		background-size: 120%;
 	}
 	.product-navigation {display:none; }
+	#featured-products li{overflow: hidden;}
+	.slider01 li span.ico {width: 100%;}
 }
 
 /* medium displays  641px*/
@@ -3104,6 +3111,7 @@ div.wpcf7-mail-sent-ok {
 		float: left;
 		background: transparent;
 	}
+	
 	
 	#site-title {width: 25%;}
 	
@@ -3128,6 +3136,7 @@ div.wpcf7-mail-sent-ok {
 		margin-bottom: 0rem;
 	}
 	
+	
 
 }
 
@@ -3135,7 +3144,7 @@ div.wpcf7-mail-sent-ok {
 @media only screen and (min-width: 60em) { 
 	
 	#home-slider a.my-button { width: 25%;}
-	#home-slider .slides li .text h1 { font-size: 2.6rem;}
+	#home-slider .slides li .text h1 { font-size: 2.4rem;}
 	#home-slider .slides li .text h2 {font-size: 1.6rem;}
 	#featured-products .back.op img {margin-left: -15%;}
 	#nav-2 li {margin: 0 1em 0 0;}

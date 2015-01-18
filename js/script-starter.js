@@ -29,7 +29,6 @@ jQuery(function ($) {
 			$heightec = $('.technical').outerHeight();
 		
 			$('#bottom-product .extras').css('height',$heightec);
-			//console.log($heightec+26) ;
 		});
 		
 		$('#bottom-product a.this_close').click(function(e) {
@@ -149,7 +148,6 @@ jQuery(function ($) {
 	        e.preventDefault(); 
 	    }); 
 	      
-	      //console.log(this);
       }
       
 	    $('.close')
@@ -159,8 +157,8 @@ jQuery(function ($) {
 	    }); 
     }
 		
-	function galeriaHome() {
-	  /*$('#home-slider').flexslider({
+	/*function galeriaHome() {
+	  $('#home-slider').flexslider({
 	    animation: "fade",
 	    animationLoop: true,
 	    controlNav: true,
@@ -188,8 +186,8 @@ jQuery(function ($) {
 			   opacity: 1 
 		    }, 400);
 	    }
-	  });*/
-	 }
+	  });
+	 }*/
 
 
 	/************************* 

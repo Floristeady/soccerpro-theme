@@ -3,8 +3,8 @@
  * SubMenu for Terms
  *
  * @package WordPress
- * @subpackage aasa
- * @since aasa 1.0
+ * @subpackage soccerpro
+ * @since soccerpro 1.0
  */
 ?>
 

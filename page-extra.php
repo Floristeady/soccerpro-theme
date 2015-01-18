@@ -82,7 +82,7 @@ get_header(); ?>
 						
 						</div>
 	
-					</article><!-- #post-## -->
+					</article>
 
 				<?php endwhile; ?>
 

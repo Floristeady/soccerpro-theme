@@ -56,7 +56,7 @@ get_header(); ?>
 							
 						</div><!-- .entry-content -->
 												
-					</article><!-- #post-## -->
+					</article>
 
 				<?php endwhile; ?>
 		</div>

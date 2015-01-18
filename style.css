@@ -787,49 +787,6 @@ nav#access ul.sub-menu li a:hover {
 	border: 1px #e5964a solid;
 }
 
-/*
- * Sidebar-menu
- */
-
-#sidebar-menu {
-	border: 2px solid #dddddd;
-	margin: 2em 0 2em;
-	padding: 1.5em;
-}
-
-#sidebar-menu h3 {
-	text-transform: uppercase;
-	font-size: 1.1em;
-}
-
-#sidebar-menu ul {
-	margin-top: 10px;
-	list-style: none;
-	padding: 0;
-}
-
-#sidebar-menu ul li {
-	padding: 8px 0px 8px 2px;
-	border-bottom: 1px solid #dcdcdc;
-	font-size: 0.97em;
-}
-
-#sidebar-menu ul li:last-child {
-	border-bottom: none;
-}
-
-#sidebar-menu li a {
-	color: #313131;
-}
-
-#sidebar-menu li.current_page_item {
-	color: #d86a2e;
-}
-
-#sidebar-menu li.current_page_item a, #sidebar-menu li a:hover {
-	color: #d86a2e;
-}
-
 .nav-links {
 	-webkit-hyphens: auto;
 	-moz-hyphens:    auto;
@@ -3435,14 +3392,6 @@ div.wpcf7-mail-sent-ok {
 
 /*
  * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
  */
 
 .clearfix:before,

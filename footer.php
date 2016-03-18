@@ -24,6 +24,8 @@
 		<ul id="footer-content" class="row">	
 		<?php get_sidebar( 'footer' ); ?>
 		</ul>
+		
+		<a title="por Inusual Estudio" style="position: absolute; right: 6px; bottom: 6px;" target="_blank" href="http://www.inusualestudio.com/"><img src="<?php echo get_template_directory_uri(); ?>/images/elements/byinusualcolor.svg"  src="" alt="por Inusual Estudio"></a>
 	</footer> 
 	<?php wp_footer(); ?>
 	</body>
